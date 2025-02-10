@@ -1,0 +1,445 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+*{
+    padding: 0%;
+    margin:0;
+    box-sizing: border-box;
+}
+/* HEADER STYLES */
+/* Default transparent navbar */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px; /* Adjust height to fit the logo */
+    padding: 20px 5%;
+    background: transparent; /* Initially transparent */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    transition: background 0.4s ease-in-out, padding 0.3s ease-in-out;
+
+}
+
+/* Solid navbar when scrolling */
+.header.scrolled {
+    background: beige; /* White with slight transparency */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    padding: 10px 5%; /* Reduce padding on scroll */
+}
+
+
+/* LOGO STYLING */
+.logo img {
+    height: 200px; /* Keep it small */
+    width: auto;
+    display: block;
+}
+
+/* NAVBAR */
+.navbar {
+    display: flex;
+    gap: 20px;
+}
+
+.navbar a {
+    font-size: 18px;
+    color: black;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.navbar a:hover {
+    color: crimson;
+}
+
+/* HAMBURGER MENU FOR MOBILE */
+#menu-toggle {
+    display: none;
+}
+
+.hamburger {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: black;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 1000px) {
+    .hamburger {
+        display: block; /* Show hamburger on mobile */
+    }
+
+    .navbar {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px; /* Below header */
+        left: 0;
+        width: 100%;
+        background-color: beige;
+        text-align: center;
+        padding: 10px 0;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    #menu-toggle:checked ~ .navbar {
+        display: flex; /* Show when checkbox is checked */
+    }
+
+    .navbar a {
+        display: block;
+        padding: 10px 0;
+    }
+}
+
+.wrapper {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    text-align: center; /* Center-align content */
+    margin-top: 0;
+  
+}
+  
+html{
+    font-size: 20px;
+        font-family: 'Montserrat', sans-serif ;}
+
+            .logo{
+                font-size: 40px;
+                font-family:'Trebuchet MS';
+                color:crimson;
+                text-decoration: none;
+                font-weight: 700; 
+                padding: 0 100 px; 
+              }
+a{
+    text-decoration: none;
+}
+.container{
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+p{
+    color:black;
+    font-size: 1.4rem;
+    margin-top: 5px;
+    line-height: 2.5rem;
+    font-weight: 300;
+    letter-spacing: .05rem;
+}
+.section title{
+    font-size: 4rem;
+    font-weight: 300;
+    color: black;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: .2rem;
+    text-align: center;
+}
+.section-title span{
+    color:white;
+}
+.cta{
+    display: inline-block;
+    padding: 10px 30px;
+    color: white;
+    background-color: transparent;
+    border:2px solid brown;
+    font-size: 2rem;
+    text-transform: uppercase ;
+    letter-spacing: .1rem;
+    margin-top:30px;
+    transition: .3s ease;
+    transition-property: background-color, color;
+   }
+    .cta:hover {
+       color:black;
+       background-color: crimson;
+   }
+
+/* hero section */
+#hero{
+    background:beige;
+    background-size: cover;
+    background-position: top center;
+    position:relative;
+}
+#hero::after{
+    content:'' ;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color:black;
+    opacity: .7;
+    z-index: -1;
+}
+#hero .hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Space between text and image */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 50px;
+    flex-wrap: wrap;
+}
+
+/* Ensure text container takes space */
+#hero .hero div {
+    flex: 1;
+    max-width: 50%;
+}
+
+#hero h1{
+    display:block;
+    width: fit-content;
+    font-size: 4rem;
+    text-align: right;
+    position: relative;
+    color:transparent;
+    animation: text_reveal .5s ease forwards;
+    animation-delay: 1.ss;
+
+}
+#hero h1:nth-child(1){
+    animation-delay:1s;
+
+}
+#hero h1:nth-child(2){
+    animation-delay:2s;
+
+}
+#hero h1:nth-child(3){
+    animation: text_reveal_name .5s ease forwards;
+    animation-delay:3s;
+
+}
+#hero h1 span{
+    position:absolute;
+    top:0%;
+    left:0%;
+    height: 100%;
+    width:0 ;
+    background-color:yellow;
+    
+    animation: text_reveal_box 1s ease;
+    animation-delay:1s;
+}
+#hero h1:nth-child(1) span{
+    animation-delay: .5s;
+}
+#hero h1:nth-child(2) span{
+    animation-delay: 1.5s;
+}
+#hero h1:nth-child(3) span{
+    animation-delay: 2.5s;
+}
+#hero .cta{
+ display: inline-block;
+ padding: 10px 30px;
+ color:black;
+ background-color: transparent;
+ border:2px solid brown;
+ font-size: 2rem;
+ text-transform: uppercase ;
+ letter-spacing: .1rem;
+ margin-top:30px;
+ transition: .3s ease;
+ transition-property: background-color, color;
+}
+#hero .cta:hover {
+    color:crimson;
+    background-color: transparent;
+}
+@media (max-width: 768px) {
+    #hero {
+        padding: 20px;
+    }
+
+    #hero h1 {
+        font-size: 2.2rem;
+    }
+}
+/* Ensure image container takes space */
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fadeInSlide 1.5s ease-in-out; /* Entrance animation */
+}
+
+.hero-image img {
+    width: 450px; /* Bigger size */
+    height: 450px;
+    border-radius: 50%; /* Make it a circle */
+    object-fit: cover;
+    background-color: white;
+    border: 8px solid #d4af37; /* Gold outline */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+}
+
+/* Entrance Animation - Slide In */
+@keyframes fadeInSlide {
+    0% {
+        opacity: 0;
+        transform: translateX(50px); /* Start off-screen */
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Hover Effect - Bounce & Glow */
+.hero-image img:hover {
+    transform: scale(1.1) rotate(3deg); /* Slight zoom & rotation */
+    box-shadow: 0 15px 30px rgba(212, 175, 55, 0.7); /* Gold glow */
+}
+
+/* Responsive Hero Section */
+@media (max-width: 1000px) {
+    #hero .hero {
+        flex-direction: column; /* Stack items vertically */
+        text-align: center;
+    }
+
+    .hero-text {
+        max-width: 100%;
+        text-align: center;
+        order: 1; /* Ensure text appears first */
+    }
+
+    .hero-text h1,
+    .hero-text p {
+        text-align: left; /* Center align both heading and paragraph */
+    }
+
+    .hero-text p {
+        margin-bottom: 25px; /* Increase spacing between text and CTA */
+    }
+
+    .hero-image {
+        order: 2; /* Move image below text */
+    }
+
+    #hero h1 {
+        font-size: 2.5rem;
+    }
+
+    /* Smaller CTA Button */
+    #hero .cta {
+        font-size: 1.2rem;
+        padding: 8px 20px;
+        margin-bottom: 40px; /* Adds gap between CTA and image */
+    }
+    }
+
+    .hero-image img {
+        width: 450px;
+        height: 450px;
+        
+    }
+
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+.clock-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-family: 'Inter', sans-serif;
+    font-size: 2rem;
+    font-weight: 600;
+    color: #222;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(245, 245, 245, 0.7));
+    padding: 12px 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease-in-out;
+}
+
+.clock-container:hover {
+    transform: scale(1.05);
+}
+
+#clock {
+    font-size: 2.2rem;
+    letter-spacing: 0.05rem;
+}
+
+#ampm {
+    font-size: 1.2rem;
+    font-weight: 400;
+    opacity: 0.8;
+    margin-left: 5px;
+}
+
+#weather {
+    font-size: 1rem;
+    font-weight: 400;
+    margin-left: 12px;
+    opacity: 0.7;
+    padding-left: 10px;
+    border-left: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Tweaks */
+@media (max-width: 768px) {
+    .clock-container {
+        font-size: 1.5rem;
+        padding: 8px 15px;
+    }
+
+    #clock {
+        font-size: 1.8rem;
+    }
+
+    #ampm,
+    #weather {
+        font-size: 0.9rem;
+    }
+}
+
+/* end hero section */
+/*keyframe*/
+@keyframes text_reveal_box{
+    50%{
+        width: 100%;
+        left: 0;
+    }
+    100%{
+        width:0;
+        left:100%;
+ }
+}
+@keyframes text_reveal{
+    100%{
+        color:black;
+    }}
+    @keyframes text_reveal_name{
+        100%{
+               color:crimson;
+               font-weight: 200;
+           }
+}

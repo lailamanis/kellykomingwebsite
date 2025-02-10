@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Kelly Koming Portfolio</title>
+  <link rel="shortcut icon" type="image/png" href="flower.png">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="achcss.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+      <a href="ach.html" class="logo">
+        <img src="logo2.png" alt="Kelly Koming Logo">
+      </a>
+      <input type="checkbox" id="menu-toggle">
+      <label for="menu-toggle" class="hamburger">☰</label>
+      <nav class="navbar">
+        <a href="homepage.html" class="active">Home</a>
+        <a href="about.html">About</a>
+        <a href="bgedu.html">Education background</a>
+        <a href="ach.html">Achievements</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+  </header>
+
+  <!-- Main Content -->
+  <div class="content">
+      <div class="container">
+          <div class="card">
+              <div class="box">
+                  <h3>Academic</h3>
+                  <ul class="custom-list">
+                      <li>🎖️ <strong>Best Student SPM 2021:</strong> SMK TONGOD (5A)</li>
+                      <li>📖 <strong>Best Student STPM 2022-2024:</strong> SMK TONGOD (3.75)</li>
+                      <li>🏅 <strong>Top 10 Student:</strong> 2017-2022</li>
+                      <li>✅ <strong>100% Attendance Award</strong></li>
+                  </ul>
+              </div>
+          </div>
+          
+          <div class="card">
+              <div class="box">
+                  <h3>Co-curriculum</h3>
+                  <ul class="custom-list">
+                      <li>🏐 <strong>Netball Team Representative:</strong> SMK TONGOD</li>
+                      <li>🎽 <strong>High Jump Athlete:</strong> SK TONGOD</li>
+                  </ul>
+              </div>
+          </div>
+          
+          <div class="card">
+              <div class="box">
+                  <h3>Experience</h3>
+                  <ul class="custom-list">
+                      <li>📋 <strong>Secretary:</strong> STPM Student Representative Council</li>
+                      <li>🏫 <strong>School Prefect</strong></li>
+                      <li>💵 <strong>Cashier</strong></li>
+                      <li>🍽️ <strong>Waiter</strong></li>
+                      <li>🖇️ <strong>Administrative Assistant (part time):</strong> Pertubuhan Peladang Kawasan Tongod</li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+      <div class="social-icons">
+          <a href="https://www.facebook.com/kelly.koming" target="_blank" aria-label="Facebook">
+              <i class="fab fa-facebook"></i>
+          </a>
+          <a href="https://www.instagram.com/kllyyr" target="_blank" aria-label="Instagram">
+              <i class="fab fa-instagram"></i>
+          </a>
+      </div>
+      <p>&copy; 2024 Nur Lailatul Juma Sahidin. All rights reserved.</p>
+      <p>Disclaimer: This website is designed to fulfill the requirement of IMD 318.</p>
+  </footer>
+
+  <script>
+      window.addEventListener("scroll", function () {
+          const header = document.querySelector(".header");
+          header.classList.toggle("scrolled", window.scrollY > 50);
+      });
+  </script>
+
+</body>
+</html>

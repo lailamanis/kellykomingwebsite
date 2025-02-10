@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>Kelly Koming Portfolio</title>
+    <link rel="shortcut icon" type="image/png" href="flower.png">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="gallerystyle.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <a href="gallery.html" class="logo">
+            <img src="logo2.png" alt="Kelly Koming Logo">
+        </a>
+        <input type="checkbox" id="menu-toggle">
+        <label for="menu-toggle" class="hamburger">☰</label>
+        <nav class="navbar">
+            <a href="homepage.html" class="active">Home</a>
+            <a href="about.html">About</a>
+            <a href="bgedu.html">Education background</a>
+            <a href="ach.html">Achievement</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="contact.html">Contact</a>
+        </nav>    
+    </header>
+
+    <div class="carousel-video-container">
+        <!-- First Video -->
+        <div class="video-container">
+            <video controls>
+                <source src="perang (1).mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    
+        <!-- Carousel -->
+        <section class="carousel-container">
+            <div class="carousel">
+                <div class="carousel-slide"><img src="bocah2.jpeg" alt="Image 1"></div>
+                <div class="carousel-slide"><img src="tua.jpg" alt="Image 2"></div>
+                <div class="carousel-slide"><img src="kebaya.jpg" alt="Image 3"></div>
+                <div class="carousel-slide"><img src="grad.jpg" alt="Image 4"></div>
+                <div class="carousel-slide"><img src="f63.jpg" alt="Image 5"></div>
+                <div class="carousel-slide"><img src="art.jpg" alt="Image 6"></div>
+                <div class="carousel-slide"><img src="netball.jpg" alt="Image 7"></div>
+                <div class="carousel-slide"><img src="5A (2).jpg" alt="Image 8"></div>
+                <div class="carousel-slide"><img src="f5.jpg" alt="Image 9"></div>
+                <div class="carousel-slide"><img src="sijil.jpg" alt="Image 10"></div>
+            </div>
+            <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+            <button class="next" onclick="moveSlide(1)">&#10095;</button>
+        </section>
+    
+        <!-- Second Video -->
+        <div class="video-container">
+            <video controls>
+                <source src="recap.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+    
+
+    <!-- Footer -->
+    <footer>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/kelly.koming?mibextid=ZbWKwL" target="_blank" aria-label="Facebook">
+                <i class="fab fa-facebook"></i>
+            </a>
+            <a href="https://www.instagram.com/kllyyr?igsh=ZjU3d3YzOWc0N3Jn" target="_blank" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+        </div>
+        <p>&copy; 2024 Nur Lailatul Juma Sahidin. All rights reserved.</p>
+        <p>Disclaimer: This website is designed to fulfill the requirement of IMD 318.</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="galleryjs.js"></script>
+</body>
+</html>

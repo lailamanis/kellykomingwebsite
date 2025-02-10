@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Kelly Koming Portfolio</title>
+    <link rel="shortcut icon" type="image/png" href="flower.png">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="abt me.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <a href="about.html" class="logo">
+            <img src="logo2.png" alt="Kelly Koming Logo">
+        </a>
+        <input type="checkbox" id="menu-toggle">
+        <label for="menu-toggle" class="hamburger">☰</label>
+        <nav class="navbar">
+            <a href="homepage.html" class="active">Home</a>
+            <a href="about.html">About</a>
+            <a href="bgedu.html">Education background</a>
+            <a href="ach.html">Achievements</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <div class="wrapper">
+        <div class="content">
+            <!-- Photo Section -->
+            <div class="photo"></div>
+            
+            <!-- About Section -->
+            <div class="about">
+                <h2>About Me</h2>
+                <ul>
+                    <li><strong>Name:</strong> Kelly Koming</li>
+                    <li><strong>Age:</strong> 20th</li>
+                    <li><strong>Place of Birth:</strong> Hospital Duchess of Kent, Sandakan</li>
+                    <li><strong>Race:</strong> Sungai</li>
+                    <li><strong>Hobby:</strong> Reading</li>
+                    <li>
+                        <strong>Favourite Song:</strong>
+                        <div class="custom-audio-player">
+                            <audio id="audioPlayer">
+                                <source src="12. Wide Awake.ogg" type="audio/ogg">
+                                <source src="12. Wide Awake.mp3" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                            <button id="playPauseBtn"><i class="fas fa-play"></i></button>
+                            <input type="range" id="seekBar" value="0">
+                            <span id="currentTime">0:00</span> / <span id="duration">0:00</span>
+                        </div>
+                    </li>
+                    <li>
+                        <strong>Role Model:</strong> 
+                        <a href="https://khairulaming.my/" target="_blank" class="instagram-button">Khairul Aming</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/kelly.koming?mibextid=ZbWKwL" target="_blank" aria-label="Facebook">
+                <i class="fab fa-facebook"></i>
+            </a>
+            <a href="https://www.instagram.com/kllyyr?igsh=ZjU3d3YzOWc0N3Jn" target="_blank" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+        </div>
+        <p>&copy; 2024 Nur Lailatul Juma Sahidin. All rights reserved.</p>
+        <p>Disclaimer: This website is designed to fulfill the requirement of IMD 318.</p>
+    </footer>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        const audioPlayer = document.getElementById("audioPlayer");
+        const playPauseBtn = document.getElementById("playPauseBtn");
+        const seekBar = document.getElementById("seekBar");
+        const currentTimeEl = document.getElementById("currentTime");
+        const durationEl = document.getElementById("duration");
+
+        playPauseBtn.addEventListener("click", function () {
+            if (audioPlayer.paused) {
+                audioPlayer.play();
+                playPauseBtn.innerHTML = '<i class="fas fa-pause"></i>';
+            } else {
+                audioPlayer.pause();
+                playPauseBtn.innerHTML = '<i class="fas fa-play"></i>';
+            }
+        });
+
+        audioPlayer.addEventListener("timeupdate", function () {
+            seekBar.value = (audioPlayer.currentTime / audioPlayer.duration) * 100;
+            currentTimeEl.textContent = formatTime(audioPlayer.currentTime);
+        });
+
+        seekBar.addEventListener("input", function () {
+            audioPlayer.currentTime = (seekBar.value / 100) * audioPlayer.duration;
+        });
+
+        audioPlayer.addEventListener("loadedmetadata", function () {
+            durationEl.textContent = formatTime(audioPlayer.duration);
+        });
+
+        function formatTime(time) {
+            let minutes = Math.floor(time / 60);
+            let seconds = Math.floor(time % 60);
+            return `${minutes}:${seconds < 10 ? "0" + seconds : seconds}`;
+        }
+
+        window.addEventListener("scroll", function () {
+            const header = document.querySelector(".header");
+            if (window.scrollY > 50) {
+                header.classList.add("scrolled");
+            } else {
+                header.classList.remove("scrolled");
+            }
+        });
+        // Greeting Popup on Page Load
+        window.onload = function() {
+            alert('Welcome to Kelly Koming creative space! Here, passion meets purpose. Dive in and explore my world!:)');
+        }
+      
+</script>
+
+
+</body>
+</html>

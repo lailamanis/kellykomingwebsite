@@ -1,0 +1,379 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Layout */
+html, body {
+    height: 100%;
+    overflow: 50px; /* Disable scrollbars */
+    font-family: 'Montserrat', sans-serif;
+    margin:0;
+    display: flex;
+    flex-direction: column;
+    background: beige;
+    padding-top: 30px;
+}
+/* HEADER STYLES */
+/* Default transparent navbar */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px; /* Adjust height to fit the logo */
+    padding: 20px 5%;
+    background: beige; /* Initially transparent */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    transition: background 0.4s ease-in-out, padding 0.3s ease-in-out;
+
+}
+
+/* Solid navbar when scrolling */
+.header.scrolled {
+    background: beige; /* White with slight transparency */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    padding: 10px 5%; /* Reduce padding on scroll */
+}
+
+
+/* LOGO STYLING */
+.logo img {
+    height: 200px; /* Keep it small */
+    width: auto;
+    display: block;
+}
+
+/* NAVBAR */
+.navbar {
+    display: flex;
+    gap: 20px;
+}
+
+.navbar a {
+    font-size: 18px;
+    color: black;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.navbar a:hover {
+    color: crimson;
+}
+
+/* HAMBURGER MENU FOR MOBILE */
+#menu-toggle {
+    display: none;
+}
+
+.hamburger {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: black;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 1000px) {
+    .hamburger {
+        display: block; /* Show hamburger on mobile */
+    }
+
+    .navbar {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px; /* Below header */
+        left: 0;
+        width: 100%;
+        background-color: beige;
+        text-align: center;
+        padding: 10px 0;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    #menu-toggle:checked ~ .navbar {
+        display: flex; /* Show when checkbox is checked */
+    }
+
+    .navbar a {
+        display: block;
+        padding: 10px 0;
+    }
+}
+
+/* Timeline Container */
+.timeline {
+    position: relative;
+    max-width: 800px;
+    width: 90%;
+    margin: 80px auto;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    transition: all 0.4s ease-in-out;
+    background: url('background.jpg') no-repeat center center/cover;
+}
+.timeline:hover {
+    transform: scale(1.02);
+}
+
+/* Timeline Line */
+.timeline::after {
+    content: "";
+    position: absolute;
+    width: 4px;
+    background: brown;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0; 
+    transition: opacity 0.6s ease-in-out;
+}
+.timeline.show::after {
+    opacity: 1; /* Gradually appear */
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+    .timeline {
+        max-width: 90%; /* Adjust for smaller screens */
+        padding: 10px;
+    }
+}
+/* Timeline Box */
+.timeline-box {
+    position: relative;
+    background: rgba(255, 255, 255, 0.9);
+    width: 45%; /* Reduced width */
+    padding: 15px; /* Reduced padding */
+    font-size: 14px; /* Adjusted text size */
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s ease-in-out;
+    opacity: 0;
+    transform: translateY(30px);
+}
+.timeline-box.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.timeline-box:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.3);
+    background: #ffede1;
+}
+
+/* Left & Right Alignment */
+.timeline-box.left {
+    left: 0;
+    text-align: right;
+    background:white;
+}
+
+.timeline-box.right {
+    left: 55%;
+    background:white;
+}
+
+/* Flexbox for arranging image and text*/
+.box-content {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Style for the image */
+.box-image {
+    width: 80px; /* Adjust image width */
+    height: 80px;
+    border-radius: 8px; /* Optional: rounded edges */
+    object-fit: cover; /* Ensures image fits well */
+}
+.box-image:hover {
+    transform: scale(1.1);
+}
+
+/* Text should take up remaining space */
+.box-text {
+    flex: 1; /* Takes up remaining space */
+}
+@media (max-width: 768px) {
+    .box-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .box-image {
+        width: 100px; /* Slightly bigger on mobile */
+        height: auto;
+        margin-bottom: 10px;
+    }
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+    .timeline-box {
+        width: 90%; /* Make it larger on small screens */
+        left: 5%;
+    }
+}
+
+/* Connector Dot */
+.timeline-box::before {
+    content: "🎓"; /* School cap emoji */
+    position: absolute;
+    top: 20px;
+    font-size: 20px;
+    left: -15px;
+    left: calc(100% + 10px);
+    
+    transition: transform 0.3s ease-in-out;
+}
+
+.timeline-box.right::before {
+    left: auto;
+    right: calc(100% + 10px);
+}
+
+/* Hover Effect */
+.timeline-box:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.timeline-box:hover::before {
+    transform: rotate(360deg);
+}
+
+/* Styling for Headings and Paragraphs */
+h2 {
+    color: black; /* Example: Dark Blue for h2 */
+    font-size: 20px;
+    font-weight: bold;
+}
+
+h3 {
+    color: brown; /* Example: Crimson for h3 */
+    font-size: 16px;
+    font-weight: bold;
+ 
+}
+
+p {
+    color: darkslategray; /* Example: Dark Slate Gray for p */
+    font-size: 14px;
+    line-height: 1.6;
+}
+a {
+    text-decoration: none !important;
+      color: brown; /* Example: Crimson for h3 */
+    font-size: 16px;
+    font-weight: bold;
+}
+
+
+
+/* Animation */
+.timeline-box {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease-in-out;
+}
+
+/* When in View */
+.timeline-box.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .timeline::after {
+        left: 20px;
+    }
+    .timeline-box {
+        width: 90%;
+        left: 10%;
+    }
+    .timeline-box.left, .timeline-box.right {
+        left: 10%;
+    }
+    .timeline-box::before {
+        left: -30px;
+    }
+}
+
+/*footer*/
+footer {
+    background-color: #333;  /* Dark background */
+    color: white !important;  /* Ensures text remains white */
+    text-align: center;
+    padding: 5px 0px;
+    font-size: 0.7rem;
+    width: 100%;
+    margin-top: auto;
+}
+
+footer p {
+    color: white !important; /* Ensures paragraph text in footer is white */
+}
+
+.social-icons a {
+    color: white !important; /* Ensures social icons stay white */
+    margin: 0 10px;
+    font-size: 20px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #00aced !important;
+}
+/* Media Queries for Small Screens */
+@media (max-width: 768px) {
+    .wrapper {
+        padding: 10px 5%;
+    }
+
+    .contents .box {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+footer {
+    font-size: 0.7rem; /* Smaller footer text for mobile */
+    padding: 5px 0;
+}
+@media (max-width: 768px) {
+    .box-content {
+        flex-direction: column; /* Stack image and text vertically */
+        align-items: center; /* Center-align content */
+        text-align: center; /* Ensure text is centered */
+    }
+
+    .box-image {
+        width: 80px; /* Adjust width for mobile */
+        height: 80px;
+        margin-bottom: 10px; /* Add space between image and text */
+    }
+
+    .box-text {
+        text-align: center; /* Ensure text is centered */
+        width: 100%; /* Allow text to take full width */
+    }
+}
+
+

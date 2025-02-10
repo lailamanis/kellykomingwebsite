@@ -1,0 +1,123 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+  <title>Kelly Koming Portfolio</title>
+  <link rel="shortcut icon" type="image/png" href="flower.png">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="bgedu.css">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header class="header">
+        <a href="about.html" class="logo">
+          <img src="logo2.png" alt="Kelly Koming Logo">
+        </a>
+        <input type="checkbox" id="menu-toggle">
+        <label for="menu-toggle" class="hamburger">☰</label>
+        <nav class="navbar">
+          <a href="homepage.html" class="active">Home</a>
+          <a href="about.html">About</a>
+          <a href="bgedu.html">Education background</a>
+          <a href="ach.html">Achievement</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Background Education Section -->
+    <div class="wrapper">
+        <section class="col">
+            <div class="timeline">
+
+                <!-- Primary School -->
+                <div class="timeline-box left">
+                    <div class="box-content">
+                        <img src="sk tongod.png" alt="SK Tongod Logo" class="box-image">
+                        <div class="box-text">
+                            <h2>2011-2016</h2>
+                            <h3><a href="https://sites.google.com/moe-dl.edu.my/sk-pekan-tongod/utama">SK Tongod</a></h3>
+                            <p>Primary School Education</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- High School -->
+                <div class="timeline-box right">
+                    <div class="box-content">
+                        <img src="smk tongod.png" alt="SMK Tongod Logo" class="box-image">
+                        <div class="box-text">
+                            <h2>2017-2021</h2>
+                            <h3><a href="https://sites.google.com/moe-dl.edu.my/smktongod/home">SMK Tongod</a></h3>
+                            <p>High School Education</p>
+                            <p>1A+ 2A 2A- 2B 1C+ 1D</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Form 6 / Pre-University -->
+                <div class="timeline-box left">
+                    <div class="box-content">
+                        <img src="smk tongod.png" alt="SMK Tongod Logo" class="box-image">
+                        <div class="box-text">
+                            <h2>2022-2024</h2>
+                            <h3><a href="https://www.instagram.com/senivisual_f6.smkt">SMK Tongod</a></h3>
+                            <p>Pre-university - Social Science</p>
+                            <p>CGPA: 3.75</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const boxes = document.querySelectorAll(".timeline-box");
+            const timeline = document.querySelector(".timeline");
+
+            function showBoxes() {
+                const triggerBottom = window.innerHeight * 0.85;
+                boxes.forEach((box) => {
+                    const boxTop = box.getBoundingClientRect().top;
+                    if (boxTop < triggerBottom) {
+                        box.classList.add("show");
+                    } else {
+                        box.classList.remove("show");
+                    }
+                });
+            }
+
+            function checkScroll() {
+                if (timeline.getBoundingClientRect().top < window.innerHeight - 100) {
+                    timeline.classList.add("show");
+                }
+            }
+
+            window.addEventListener("scroll", () => {
+                showBoxes();
+                checkScroll();
+            });
+
+            showBoxes();
+            checkScroll();
+        });
+    </script>
+
+    <!-- Footer -->
+    <footer>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/kelly.koming" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/kllyyr" target="_blank"><i class="fab fa-instagram"></i></a>
+        </div>
+        <p>&copy; 2024 Nur Lailatul Juma Sahidin. All rights reserved.</p>
+        <p>Disclaimer: This website is designed to fulfill the requirements of IMD 318.</p>
+    </footer>
+
+</body>
+</html>

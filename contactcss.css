@@ -1,0 +1,338 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');        
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column; /* Stack content vertically */
+  justify-content: flex-start; /* Align content from top */
+  min-height: 100vh; /* Ensure the body covers the full viewport */
+  background: beige;
+  overflow-x: hidden;
+  padding-top: 30px; 
+}
+.main-content {
+  display: flex;
+  flex-direction: column; /* Stack content vertically */
+  justify-content: center; /* Center content vertically */
+  align-items: center; /* Center content horizontally */
+  flex-grow: 1; /* Allow content to take all available space */
+}
+/* HEADER STYLES */
+/* Default transparent navbar */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 90px; /* Adjust height to fit the logo */
+  padding: 20px 5%;
+  background: transparent; /* Initially transparent */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  transition: background 0.4s ease-in-out, padding 0.3s ease-in-out;
+
+}
+
+/* Solid navbar when scrolling */
+/* Make sure the background color change is noticeable */
+.header.scrolled {
+  background: rgba(245, 245, 220, 0.95); /* Beige with slight transparency */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Add a shadow */
+  padding: 10px 5%; /* Adjust padding on scroll */
+}
+
+
+
+/* LOGO STYLING */
+.logo img {
+  height: 200px; /* Keep it small */
+  width: auto;
+  display: block;
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  gap: 20px;
+}
+
+.navbar a {
+  font-size: 16px;
+  color: black;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.navbar a:hover {
+  color: crimson;
+}
+
+/* HAMBURGER MENU FOR MOBILE */
+#menu-toggle {
+  display: none;
+}
+
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: black;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 1000px) {
+  .hamburger {
+      display: block; /* Show hamburger on mobile */
+  }
+
+  .navbar {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 60px; /* Below header */
+      left: 0;
+      width: 100%;
+      background-color: beige;
+      text-align: center;
+      padding: 10px 0;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  #menu-toggle:checked ~ .navbar {
+      display: flex; /* Show when checkbox is checked */
+  }
+
+  .navbar a {
+      display: block;
+      padding: 10px 0;
+  }
+}
+.wrapper {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+  text-align: center; /* Center-align content */
+  margin-top: 0;
+
+}
+
+.contact {
+  margin-top: 0; /* Remove any additional margins */
+  padding: 15px 0; /* Maintain clean spacing */
+    background-color:beige;
+}
+
+.section-title h2 {
+    font-family: "Montserrat", serif;
+    color:crimson;
+    text-align: center;
+}
+
+.contact-container {
+  display: flex;  /* Use Flexbox for layout */
+  gap: 30px;  /* Space between contact info and form */
+  justify-content: center;  /* Center the content horizontally */
+  align-items: stretch;  /* Ensure both containers stretch equally in height */
+  max-width: 700px;  /* Set a maximum width for the container */
+  margin: 0 auto;
+  padding: 5px;
+  flex-wrap: wrap; /* Allow wrapping for small screens */
+
+}
+.contact-info, .contact-form {
+  flex: 1 1 300px;  /* Equal flex sizing: */
+  /* flex-grow: 1 (equal growth),
+     flex-shrink: 1 (shrink if needed),
+     flex-basis: 300px (minimum width of 300px) */
+min-width: 200px; /* Prevent containers from shrinking too small */
+max-width: 300px; /* Optional: Set a max width for better aesthetics */
+padding: 10px; /* Smaller padding inside containers */
+background: #fff;}
+
+.contact-info {
+    flex: 1;
+    background: #fff;
+    padding: 10px;
+    border-radius: 6px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.contact-info:hover {
+  transform: scale(1.05);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+.contact-info::before {
+  content: '';
+  position:relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  opacity: 0.8;
+  z-index: -1;
+  clip-path: circle(150px at 80% 20%);
+  transition: clip-path 0.4s ease-in-out;
+}
+.contact-info:hover::before {
+  clip-path: circle(300px at 80% 20%);
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.info-item i {
+    font-size: 30px;
+    margin-right: 15px;
+    color: crimson;
+}
+
+.info-item h3 {
+    margin: 0;
+    font-size: 25px;
+    color: #333;
+}
+
+.info-item p {
+    font-size: 20px;
+    color: #555;
+}
+
+.contact-form {
+    background: #fff;
+    padding: 10px;
+    border-radius: 6px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.contact-form:hover {
+  transform: scale(1.05);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+.contact-form::before {
+  content: '';
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  opacity: 0.8;
+  z-index: -1;
+  clip-path: none;
+  transition: clip-path 0.4s ease-in-out;
+}
+.contact-form:hover::before {
+  clip-path: circle(300px at 80% 20%);
+}
+
+.contact-form label {
+    font-weight: bold;
+    margin-bottom: 10px;
+    display: block;
+}
+.contact-info h3, .contact-form label {
+  font-size: 0.9rem; /* Smaller headings */
+}
+
+.contact-info p, .contact-form input, .contact-form textarea {
+  font-size: 0.8rem; /* Slightly smaller text */
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 6px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 0.9rem;
+}
+
+.contact-form button {
+  margin-top: 10px;
+    padding: 8px 16px;
+    background-color: crimson;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.contact-form button:hover {
+    background-color:burlywood;
+}
+
+#form-message {
+    text-align: center;
+    font-size: 1rem;
+    margin-top: 20px;
+}
+/* Footer */
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 5px 0;
+  font-size: 0.7rem;
+  margin-top: auto; /* Push the footer to the bottom */
+}
+
+footer p {
+  margin: 0;
+}
+
+.social-icons a {
+  color: white;
+  margin: 0 10px;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+.social-icons a:hover {
+  color: #00aced;
+}
+/* Responsive Footer */
+@media (max-width: 768px) {
+  .wrapper {
+      padding: 10px 5%;
+  }
+
+  .contents .box {
+      flex-direction: column;
+      gap: 10px;
+  }
+}
+footer {
+  font-size: 0.7rem; /* Smaller footer text for mobile */
+  padding: 5px 0;
+}
+@media (max-width: 768px) {
+  .contact-container {
+      flex-direction: column; /* Stack vertically */
+      align-items: center;    /* Center content */
+      gap: 20px;
+  }
+
+  .contact-info, .contact-form {
+      width: 100%; /* Full width for smaller screens */
+  }
+}
